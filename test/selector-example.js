@@ -28,6 +28,18 @@ describe("Test webdriveruni homepage", () => {
         $("#contact-us").waitForEnabled(3000);
         const clickByCSS = $("#contact-us h1")
         clickByCSS.click();
-        browser.closeWindow();
+        //browser.closeWindow();
+    })
+
+    it("Test for adding Chai Assertions", () => {
+        //$("#login-portal").waitForEnabled(3000);
+
+        const clickForChai = $("#login-portal")  
+        //expect(clickForChai)
+        clickForChai.click();
+        browser.switchWindow('WebDriver | Login Portal');
+        const title = browser.getTitle();  
+        expect(title).to.contain('WebDriver | Login');
+        //browser.closeWindow();
     })
 })
