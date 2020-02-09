@@ -1,3 +1,13 @@
+var baseUrl;
+
+if(process.env.SERVER === 'prod') {
+    baseUrl = 'https://staff.planit.net.au';
+} else {
+    baseUrl = 'http://webdriveruniversity.com';
+}
+
+var timeout = process.env.DEBUG ? 99999999 : 10000;
+
 exports.config = {
     //
     // ====================
@@ -24,7 +34,7 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
-        // 'path/to/excluded/files'
+        './pageObjects/*_Page.js'
     ],
     //
     // ============
@@ -72,7 +82,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'trace',
     //
     // Set specific log levels per logger
     // loggers:
@@ -96,10 +106,10 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://webdriveruniversity.com/',
+    baseUrl: baseUrl,
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 20000,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
@@ -112,11 +122,11 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'],
-    /*port: 9999,
+    services: ['selenium-standalone'],
+    port: 9999,
     seleniumArgs: {
         seleniumArgs: ['-port','9999']
-    },*/
+    },
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -132,14 +142,14 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
+    reporters: ['dot'],
  
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
         ui: 'bdd',
-        timeout: 60000,
+        timeout: timeout,
         compilers: ['js:@babel/register']
     },
     //
@@ -175,7 +185,8 @@ exports.config = {
     before: function (capabilities, specs) {
         require('@babel/register');
         expect = require('chai').expect;
-        expect = require('chakram').expect;
+        should = require('chai').should();
+        //expect = require('chakram').expect;
     },
     /**
      * Runs before a WebdriverIO command gets executed.
