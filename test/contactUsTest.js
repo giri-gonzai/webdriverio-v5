@@ -1,4 +1,5 @@
 var ContactUs_Page = require("../pageObjects/ContactUs_Page.js");
+const assert = require('assert');
 
 beforeEach('Accessing Contact Us URL', async()  => {            //Using async wait requests
     await browser.url('/Contact-Us/contactus.html');            //Using await command
