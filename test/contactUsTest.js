@@ -6,7 +6,7 @@ beforeEach('Accessing Contact Us URL', async()  => {            //Using async wa
 
 describe('WebdriverUni: Test Contact Us Page', ()  => {     //Following POM Phase 1
 
-    /* it('Positive Test: Should be able to submit a successful submission via contact us form', ()  => {  
+    it('Positive Test: Should be able to submit a successful submission via contact us form', ()  => {  
         ContactUs_Page.submitAllInformationContactUsForm('GG', 'Gogo', 'gg@mail.com', 'NY');
         ContactUs_Page.successfulSubmission.waitForDisplayed(3000);
         try { 
@@ -56,7 +56,7 @@ describe('WebdriverUni: Test Contact Us Page', ()  => {     //Following POM Phas
                 console.log("Exception: " + err);
                 assert.fail();
             }
-        }); */ 
+        }); 
 
     it('Positive Test for Reset Button Check', () => {
         ContactUs_Page.setFirstName('GG');
