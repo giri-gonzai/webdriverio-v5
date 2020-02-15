@@ -185,6 +185,7 @@ exports.config = {
     before: function (capabilities, specs) {
         require('@babel/register');
         expect = require('chai').expect;
+        assert = require('chai').assert;
         should = require('chai').should();
         //expect = require('chakram').expect;
     },

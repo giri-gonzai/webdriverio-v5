@@ -68,3 +68,5 @@ class Accordian_PageObjects {
     //Method for timer box - Loading Content
 
 }
+
+module.exports = new Accordian_PageObjects();

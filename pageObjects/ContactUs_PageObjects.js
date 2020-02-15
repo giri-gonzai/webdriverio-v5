@@ -1,4 +1,4 @@
-class ContactUs_Page {                                      //Creating POM Classes: Phase 2 - Using Abstraction
+class ContactUs_PageObjects {                                      //Creating POM Classes: Phase 2 - Using Abstraction
     
     //First Name Box ID
     get firstName() {                                         //First POM Method
@@ -84,4 +84,4 @@ class ContactUs_Page {                                      //Creating POM Class
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 
-module.exports = new ContactUs_Page();
+module.exports = new ContactUs_PageObjects();
