@@ -9,7 +9,8 @@ beforeEach('Accessing Contact Us URL', async()  => {            //Using async wa
 describe('WebDriver Uni: Test Accordian Page', () => {
     
     it('Positive Test: Should Open Accordian Page and expand Manual Testing Box', () => {
-
+        Accordian_PageObjects.clickManualTestingExpanderButton();
+        Accordian_PageObjects.getTextManualTestingExpanderDescription();
     });
 
 });

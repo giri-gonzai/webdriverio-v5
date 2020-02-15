@@ -61,7 +61,15 @@ class Accordian_PageObjects {
 
     //Locator Methods
 
-    //Method for first expand box - Manual Testing
+    //Method for Manual Testing Expander Button
+    clickManualTestingExpanderButton() {
+        return this.manualTestingExpander.click();
+    }
+    //Method for Manual Testing Expander Description Text
+    getTextManualTestingExpanderDescription() {
+        return this.manualTestingExpanderDescription.getText();
+    }
+
     //Method for second expand box - Cucumber BDD Testing
     //Method for third expand box - Test Automation
     //Method for forth expand box - Keep Clicking Box
