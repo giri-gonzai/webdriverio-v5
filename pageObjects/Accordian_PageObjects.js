@@ -8,35 +8,54 @@ class Accordian_PageObjects {
     get manualTestingExpanderDescription() {
         return $("[id='manual-testing-description']");
     }
+    //Getting Text for Manual Testing Expander Description
+    get manualTestingExpanderDescriptionText() {
+        return this.manualTestingExpanderDescription.getText();
+    }
 
     //Locator for Cucumber BDD Testing Expander
-    get manualTestingExpander() {
+    get cucumberExpander() {
         return $("[id='cucumber-accordion']");
     }
     //Locator for Cucumber BDD Testing Expander Description
-    get manualTestingExpanderDescription() {
+    get cucumberExpanderDescription() {
         return $("[id='cucumber-accordion-description']");
+    }
+    //Getting Text for Cucumber BDD Testing Expander Description
+    get cucumberExpanderDescriptionText() {
+        return this.cucumberExpanderDescription.getText();
     }
 
     //Locator for Test Automation Expander
-    get manualTestingExpander() {
+    get automationTestingExpander() {
         return $("[id='automation-accordion']");
     }
     //Locator for Test Automation Expander Description
-    get manualTestingExpanderDescription() {
+    get automationTestingExpanderDescription() {
         return $("[id='automation-testing-description']");
+    }
+    //Getting Text for Test Automation Expander Description
+    get automationTestingExpanderDescriptionText() {
+        return this.automationTestingExpanderDescription.getText();
     }
 
     //Locator for Keep Clicking Expander
-    get manualTestingExpander() {
+    get clickExpander() {
         return $("[id='click-accordion']");
     }
     //Locator for Keep Clicking Expander Description
-    get manualTestingExpanderDescription() {
+    get clickExpanderDescription() {
         return $("[id='timeout']");
+    }
+    //Getting Text for Keep Clicking Expander Description
+    get clickExpanderDescriptionText() {
+        return this.clickExpanderDescription.getText();
     }
 
     //Locator for timer box - Loading Content
+    get hiddenElementBar() {
+        return $("[id='hidden-text']");
+    }
 
     //////////////////////////////////////////////////////////
 
