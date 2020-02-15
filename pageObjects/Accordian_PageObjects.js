@@ -32,13 +32,13 @@ class Accordian_PageObjects {
         return $("[id='click-accordion']");
     }
     //Locator for Keep Clicking Expander Description
-    get clickExpanderDescription() {
+    get hiddenElementExpanderDescription() {
         return $("[id='timeout']");
     }
 
     //Locator for timer box - Loading Content
-    get hiddenElementBar() {
-        return $("[id='hidden-text']");
+    get hiddenLoadingElementBar() {
+        return elem = $("[#hidden-text]");
     }
 
     //////////////////////////////////////////////////////////
@@ -73,8 +73,14 @@ class Accordian_PageObjects {
     }
 
     //Method for forth expand box - Keep Clicking Box
-    //Method for timer box - Loading Content
+    waitForHiddenElementExpanderButton() {
+        return this.hiddenLoadingElementBar.getText();
+    }
 
+    //Method for timer box - Loading Content
+    getHiddenElementExpanderDescription() {
+        return this.hiddenElementExpanderDescription.getText();
+    }
 }
 
 module.exports = new Accordian_PageObjects();
