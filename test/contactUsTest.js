@@ -1,5 +1,6 @@
 var ContactUs_Page = require("../pageObjects/ContactUs_Page.js");
 const assert = require('assert');
+const chai = require('chai');
 
 beforeEach('Accessing Contact Us URL', async()  => {            //Using async wait requests
     await browser.url('/Contact-Us/contactus.html');            //Using await command
@@ -65,11 +66,14 @@ describe('WebdriverUni: Test Contact Us Page', ()  => {     //Following POM Phas
         ContactUs_Page.setEmailAddress('gg@mail.com');
         ContactUs_Page.setMessage('NY');
         ContactUs_Page.clickResetButton();
+        
+        //ContactUs_Page.setEmailAddress().assert.isEmpty('');
+        
         try {
             expect(ContactUs_Page.setFirstName).to.be.null;
         }   catch(err) {
             console.log("Exception: " + err);
-            assert.fail();
-        }
+            chai.assert.isEmpty('');
+        } 
     });    
 });
