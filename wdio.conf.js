@@ -34,7 +34,7 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
-        './pageObjects/*_Page.js'
+        './pageObjects/*_PageObjects.js'
     ],
     //
     // ============
