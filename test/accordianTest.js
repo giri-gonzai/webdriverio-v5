@@ -8,9 +8,19 @@ beforeEach('Accessing Contact Us URL', async()  => {            //Using async wa
 
 describe('WebDriver Uni: Test Accordian Page', () => {
     
-    it('Positive Test: Should Open Accordian Page and expand Manual Testing Box', () => {
+    it('Positive Test-Manual Testing Expander: Should Open Accordian Page and expand Manual Testing Box', () => {
         Accordian_PageObjects.clickManualTestingExpanderButton();
         Accordian_PageObjects.getTextManualTestingExpanderDescription();
     });
+
+    it('Positive Test-Cucumber BDD Expander: Should Open Accordian Page and expand Cucumber BDD Box', () => {
+        Accordian_PageObjects.clickCucumberBDDExpanderButton();
+        Accordian_PageObjects.getTextCucumberBDDExpanderDescription();
+    });
+
+    it('Positive Test-Test Automation Expander: Should Open Accordian Page and expand Test Automation Box', () => {
+        Accordian_PageObjects.clickAutomationTestingExpanderButton();
+        Accordian_PageObjects.getTextAutomationTestingExpanderDescription();
+    });  
 
 });

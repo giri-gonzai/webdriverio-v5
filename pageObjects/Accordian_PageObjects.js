@@ -8,10 +8,6 @@ class Accordian_PageObjects {
     get manualTestingExpanderDescription() {
         return $("[id='manual-testing-description']");
     }
-    //Getting Text for Manual Testing Expander Description
-    get manualTestingExpanderDescriptionText() {
-        return this.manualTestingExpanderDescription.getText();
-    }
 
     //Locator for Cucumber BDD Testing Expander
     get cucumberExpander() {
@@ -19,13 +15,9 @@ class Accordian_PageObjects {
     }
     //Locator for Cucumber BDD Testing Expander Description
     get cucumberExpanderDescription() {
-        return $("[id='cucumber-accordion-description']");
+        return $("[id='cucumber-testing-description']");
     }
-    //Getting Text for Cucumber BDD Testing Expander Description
-    get cucumberExpanderDescriptionText() {
-        return this.cucumberExpanderDescription.getText();
-    }
-
+   
     //Locator for Test Automation Expander
     get automationTestingExpander() {
         return $("[id='automation-accordion']");
@@ -33,10 +25,6 @@ class Accordian_PageObjects {
     //Locator for Test Automation Expander Description
     get automationTestingExpanderDescription() {
         return $("[id='automation-testing-description']");
-    }
-    //Getting Text for Test Automation Expander Description
-    get automationTestingExpanderDescriptionText() {
-        return this.automationTestingExpanderDescription.getText();
     }
 
     //Locator for Keep Clicking Expander
@@ -46,10 +34,6 @@ class Accordian_PageObjects {
     //Locator for Keep Clicking Expander Description
     get clickExpanderDescription() {
         return $("[id='timeout']");
-    }
-    //Getting Text for Keep Clicking Expander Description
-    get clickExpanderDescriptionText() {
-        return this.clickExpanderDescription.getText();
     }
 
     //Locator for timer box - Loading Content
@@ -70,8 +54,24 @@ class Accordian_PageObjects {
         return this.manualTestingExpanderDescription.getText();
     }
 
-    //Method for second expand box - Cucumber BDD Testing
-    //Method for third expand box - Test Automation
+    //Method for Test Automation Expander Button
+    clickAutomationTestingExpanderButton() {
+        return this.automationTestingExpander.click();
+    }
+    //Method for Automation Testing Expander Description Text
+    getTextAutomationTestingExpanderDescription() {
+        return this.automationTestingExpanderDescription.getText();
+    }
+
+    //Method for Cucumber BDD Testing Button
+    clickCucumberBDDExpanderButton() {
+        return this.cucumberExpander.click();
+    }
+    //Method for Cucumber BDD Testing Expander Description
+    getTextCucumberBDDExpanderDescription() {
+        return this.cucumberExpanderDescription.getText();
+    }
+
     //Method for forth expand box - Keep Clicking Box
     //Method for timer box - Loading Content
 
