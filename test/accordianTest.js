@@ -25,7 +25,14 @@ describe('WebDriver Uni: Test Accordian Page', () => {
     });
     
     it('Postive Explicit Wait Time Test', () => {
-        Accordian_PageObjects.clickHiddenElementExpanderButton();
+        this.timeout(20000);
+		console.log("Current Text: " + Accordian_PageObjects.waitForHiddenElementExpanderButton());
+		Accordian_PageObjects.waitForHiddenElementExpanderButton().waitForText(1000);
+        
+        while(Accordian_PageObjects.waitForHiddenElementExpanderButton() != 'LOADING COMPLETE.') {
+            browser.pause(1000);
+        }
+
         Accordian_PageObjects.getHiddenElementExpanderDescription();
     })
 
