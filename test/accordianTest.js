@@ -25,14 +25,15 @@ describe('WebDriver Uni: Test Accordian Page', () => {
     });
     
     it('Postive Explicit Wait Time Test', () => {
-        const loadingContent = $('//*[text()="LOADING COMPLETE."]/..');
-        const keepClickingButton = $("[id='click-accordion']");
-        const keepClickingExpanderText = $("[id='timeout']");
+        const loadingContent = $('/html//p[@id="hidden-text"]');
+        const hiddenTextExpander = $("[id='click-accordion']");
+        const hiddenTextExpanderText = $("[id='timeout']");
         
         loadingContent.waitForExist(10000);
-        keepClickingButton.click();
-        keepClickingExpanderText.getText();
+        hiddenTextExpander.click();
+        hiddenTextExpanderText.getText();
         
+        //Accordian_PageObjects.getTextHiddenElementExpanderDescription();
 
         
         /* while(Accordian_PageObjects.waitForHiddenElementExpanderButton() != 'LOADING COMPLETE.') {
