@@ -25,15 +25,19 @@ describe('WebDriver Uni: Test Accordian Page', () => {
     });
     
     it('Postive Explicit Wait Time Test', () => {
-        this.timeout(20000);
-		console.log("Current Text: " + Accordian_PageObjects.waitForHiddenElementExpanderButton());
-		Accordian_PageObjects.waitForHiddenElementExpanderButton().waitForText(1000);
+        const loadingContent = $('//*[text()="LOADING COMPLETE."]/..');
+        const keepClickingButton = $("[id='click-accordion']");
+        const keepClickingExpanderText = $("[id='timeout']");
         
-        while(Accordian_PageObjects.waitForHiddenElementExpanderButton() != 'LOADING COMPLETE.') {
-            browser.pause(1000);
-        }
+        loadingContent.waitForExist(10000);
+        keepClickingButton.click();
+        keepClickingExpanderText.getText();
+        
 
-        Accordian_PageObjects.getHiddenElementExpanderDescription();
+        
+        /* while(Accordian_PageObjects.waitForHiddenElementExpanderButton() != 'LOADING COMPLETE.') {
+            browser.pause(1000);
+        } */    
     })
 
 });

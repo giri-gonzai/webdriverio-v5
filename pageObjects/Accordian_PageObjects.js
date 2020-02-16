@@ -78,7 +78,7 @@ class Accordian_PageObjects {
     }
 
     //Method for timer box - Loading Content
-    getHiddenElementExpanderDescription() {
+    getTextHiddenElementExpanderDescription() {
         return this.hiddenElementExpanderDescription.getText();
     }
 }
