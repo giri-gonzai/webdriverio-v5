@@ -3,7 +3,7 @@ const assert = require('assert');
 /* const chai = require('chai');
 const expect = require('expect'); */
 
-beforeEach('Accessing Contact Us URL', async()  => {            //Using async wait requests
+beforeEach('Accessing Accordian URL', async()  => {            //Using async wait requests
     await browser.url('/Accordion/index.html');            //Using await command
 });
 
