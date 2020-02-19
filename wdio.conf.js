@@ -188,6 +188,13 @@ exports.config = {
         assert = require('chai').assert;
         should = require('chai').should();
         //expect = require('chakram').expect;
+
+        browser.addCommand('getUrlAndTitle', function () {
+            return {
+                url: this.getUrl(),
+                title: this.getTitle()
+            };
+        });
     },
     /**
      * Runs before a WebdriverIO command gets executed.

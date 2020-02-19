@@ -8,10 +8,15 @@ beforeEach('Accessing Accordian URL', async()  => {            //Using async wai
 });
 
 describe('WebDriver Uni: Test Accordian Page', () => {
-    
-    it('Positive Test-Manual Testing Expander: Should Open Accordian Page and expand Manual Testing Box', () => {
+
+    it('Positive Test-Manual Testing Expander: Should Open Accordian Page and expand Manual Testing Box', () => {      
         Accordian_PageObjects.clickManualTestingExpanderButton();
         Accordian_PageObjects.getTextManualTestingExpanderDescription();
+      
+        const accordianPageData = browser.getUrlAndTitle();
+        //console.log(accordianPageData.url);
+        expect(accordianPageData.url).to.contains('Accordion');
+        expect(accordianPageData.title).to.contains('Accordion');
     });
 
     it('Positive Test-Cucumber BDD Expander: Should Open Accordian Page and expand Cucumber BDD Box', () => {
@@ -32,8 +37,8 @@ describe('WebDriver Uni: Test Accordian Page', () => {
         loadingContent.waitForExist(10000);
         //hiddenTextExpander.click();
         hiddenTextExpander.getText();
-        //hiddenTextExpanderText.getText('');
-        assert.equal(hiddenTextExpanderText.getText(''), 'This text has appeared after 5 seconds!');
+        hiddenTextExpanderText.getText('');
+        //assert.equal(hiddenTextExpanderText.getText(''), 'This text has appeared after 5 seconds!');
         
         //Accordian_PageObjects.getTextHiddenElementExpanderDescription();
 
