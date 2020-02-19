@@ -27,6 +27,8 @@ describe('WebDriver Uni: Test Accordian Page', () => {
     it('Positive Test-Test Automation Expander: Should Open Accordian Page and expand Test Automation Box', () => {
         Accordian_PageObjects.clickAutomationTestingExpanderButton();
         Accordian_PageObjects.getTextAutomationTestingExpanderDescription();
+        Accordian_PageObjects.automationTestingExpander.isExisting();
+        console.log("Automation Testing Expander: " + Accordian_PageObjects.automationTestingExpander.isExisting());
     });
     
     it('Postive Explicit Wait Time Test', () => {
