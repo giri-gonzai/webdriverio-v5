@@ -1,7 +1,7 @@
 var Accordian_PageObjects = require("../pageObjects/Accordian_PageObjects.js");
 const assert = require('assert');
-/* const chai = require('chai');
-const expect = require('expect'); */
+/* const chai = require('chai');*/
+const expect = require('expect'); 
 
 beforeEach('Accessing Accordian URL', async()  => {            //Using async wait requests
     await browser.url('/Accordion/index.html');            //Using await command
