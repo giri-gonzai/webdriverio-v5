@@ -46,6 +46,13 @@ describe('WebDriver Uni: Test Accordian Page', () => {
         /* while(Accordian_PageObjects.waitForHiddenElementExpanderButton() != 'LOADING COMPLETE.') {
             browser.pause(1000);
         } */    
-    })
+    });
+
+    it('Executing custom JavaScript', () => {
+        browser.execute(() => {
+            return (document.body.style.backgroundColor = "red");
+        });
+        browser.pause(5000);
+    });
 
 });
