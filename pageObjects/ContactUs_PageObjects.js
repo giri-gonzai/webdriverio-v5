@@ -46,7 +46,7 @@ class ContactUs_PageObjects {                                      //Creating PO
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     setFirstName(firstName){                           //Advanced POM Framwork Abstraction
-        return this.firstName.setValue(firstName);
+        return this.firstName.addValue(firstName);
     } 
     setLastName(lastName){
         return this.lastName.setValue(lastName);

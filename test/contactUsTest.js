@@ -60,7 +60,7 @@ describe('WebdriverUni: Test Contact Us Page', ()  => {     //Following POM Phas
             }
         }); 
 
-    it('Positive Test for Reset Button Check', () => {
+    it.only('Positive Test for Reset Button Check', () => {
         ContactUs_PageObjects.setFirstName('GG');
         ContactUs_PageObjects.setLastName('Gogo');
         ContactUs_PageObjects.setEmailAddress('gg@mail.com');
