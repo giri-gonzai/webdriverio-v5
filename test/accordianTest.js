@@ -1,7 +1,8 @@
 var Accordian_PageObjects = require("../pageObjects/Accordian_PageObjects.js");
 const assert = require('assert');
 /* const chai = require('chai');*/
-const expect = require('expect'); 
+//const expect = require('expect'); 
+var config = require('../config/main-config');
 
 beforeEach('Accessing Accordian URL', async()  => {            //Using async wait requests
     await browser.url('/Accordion/index.html');            //Using await command
@@ -32,11 +33,12 @@ describe('WebDriver Uni: Test Accordian Page', () => {
     });
     
     it('Postive Explicit Wait Time Test', () => {
-        const loadingContent = $('#hidden-text');
+        //var loadingContent = $('#hidden-text');
         const hiddenTextExpander = $("[id='click-accordion']");
         const hiddenTextExpanderText = $("/html//div[@id='timeout']");
         
-        loadingContent.waitForExist(10000);
+        //loadingContent.waitForExist(10000);
+        browser.waitAndClick(('#hidden-text'));
         //hiddenTextExpander.click();
         hiddenTextExpander.getText();
         hiddenTextExpanderText.getText('');
