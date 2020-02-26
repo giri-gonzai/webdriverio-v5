@@ -1,4 +1,4 @@
-var baseUrl;
+const config = require('./config/main-config');
 
 if(process.env.SERVER === 'prod') {
     baseUrl = 'https://staff.planit.net.au';
@@ -65,7 +65,7 @@ exports.config = {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'chrome',
+        browserName: config.browser,
         'goog:chromeOptions': {
             // to run chrome headless the following flags are required
             // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
@@ -83,7 +83,7 @@ exports.config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'trace',
+    logLevel: config.logLevel,
     //
     // Set specific log levels per logger
     // loggers:
@@ -107,10 +107,10 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: baseUrl,
+    baseUrl: config.baseUrl,
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 20000,
+    waitforTimeout: config.timeout,
     //
     // Default timeout in milliseconds for request
     // if Selenium Grid doesn't send response
