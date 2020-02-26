@@ -65,7 +65,7 @@ describe('WebdriverUni: Test Contact Us Page', ()  => {     //Following POM Phas
         ContactUs_PageObjects.setFirstName('GG');
         ContactUs_PageObjects.setLastName('Gogo');
         ContactUs_PageObjects.setEmailAddress(dataGenerators.generateRandomEmailAddress());
-        ContactUs_PageObjects.setMessage('NY');
+        ContactUs_PageObjects.setMessage(dataGenerators.generateRandomMessage());
         ContactUs_PageObjects.clickResetButton();
         
         //ContactUs_PageObjects.setEmailAddress().assert.isEmpty('');
